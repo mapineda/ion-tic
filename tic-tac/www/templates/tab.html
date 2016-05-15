@@ -1,0 +1,21 @@
+<!--
+Create tabs with an icon and label, using tabs-positive styling.
+Each tab's child <ion-nav-view> directive will have own
+navigation history that also transitions its views in and out.
+-->
+<ion-tabs class="tabs-icon-top tabs-color-active-positive">
+
+
+  <!-- Play Tab -->
+  <ion-tab title="Play" icon-off="ion-play" icon-on="ion-play" href="#/tab/play">
+    <ion-nav-view name="tab-play"></ion-nav-view>
+  </ion-tab>
+
+
+  <!-- Leaderboard Tab -->
+  <ion-tab title="Leaderboard" icon-off="ion-trophy" icon-on="ion-trophy" on-select="enteringLeaderboard()" on-deselect="leavingLeaderboard()" href="#/tab/leaderboard" badge="favCount()" badge-style="badge-assertive">
+    <ion-nav-view name="tab-leaderboard"></ion-nav-view>
+  </ion-tab>
+
+
+</ion-tabs>
