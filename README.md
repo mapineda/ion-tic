@@ -71,10 +71,10 @@ Low-res Wireframe:
 ![application wireframe](images/wireframe.png)
 
 #### Dev Process
-5/12 - Design
-5/13 - Create blank ionic skeleton, add android platform
-5/14 - Create tab templates + controllers & services
-5/15 - Finish tab layout
+* 5/12 - Design
+* 5/13 - Create blank ionic skeleton, add android platform
+* 5/14 - Create tab templates + controllers & services
+* 5/15 - Finish tab layout
 
 
 ## Contact:
