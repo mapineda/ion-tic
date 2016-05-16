@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('tictac', ['ionic', 'tictac.controllers'])
+angular.module('tictac', ['ionic', 'ngSanitize', 'btford.socket-io'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -15,8 +15,6 @@ angular.module('tictac', ['ionic', 'tictac.controllers'])
     if(window.StatusBar) {
       StatusBar.styleDefault();
     }
-
-
   });
 })
 
@@ -29,61 +27,18 @@ angular.module('tictac', ['ionic', 'tictac.controllers'])
   // Each state's controller can be found in controllers.js.
   $stateProvider
 
-
-  // Set up an abstract state for the tabs directive:
-  .state('tab', {
-    url: '/tab',
-    abstract: true,
-    templateUrl: 'templates/tabs.html',
-    controller: 'TabsCtrl',
-    // don't load the state until we've populated our User, if necessary.
-    resolve: {
-      populateSession: function(User) {
-        return User.checkSession();
-      }
-    },
-    onEnter: function($state, User) {
-      User.checkSession().then(function(hasSession) {
-        if (!hasSession) $state.go('splash');
-      });
-    }
+  .state('play', {
+    url: "/play/:username",
+    templateURL: "templates/play.html"
+  })
+  .state('splash', {
+    url: "/splash",
+    templateURL: "templates/splash.html"
   })
 
-  // Each tab has its own nav history stack:
 
-  .state('tab.play', {
-    url: '/play',
-    views: {
-      'tab-play': {
-        templateUrl: 'templates/play.html',
-        controller: 'PlayCtrl'
-      }
-    }
-  })
-
-  .state('tab.leaderboard', {
-      url: '/leaderboard',
-      views: {
-        'tab-leaderboard': {
-          templateUrl: 'templates/leaderboard.html',
-          controller: 'LeaderboardCtrl'
-        }
-      }
-    })
-
-    // splash page
-    .state('splash', {
-      url: '/',
-      templateUrl: 'templates/splash.html',
-      controller: 'SplashCtrl',
-      onEnter: function($state, User) {
-        User.checkSession().then(function(hasSession) {
-          if (hasSession) $state.go('tab.play');
-        });
-      }
-    })
   // If none of the above states are matched, use this as the fallback:
-  $urlRouterProvider.otherwise('/tab/play');
+  $urlRouterProvider.otherwise('/splash');
 
 })
 
