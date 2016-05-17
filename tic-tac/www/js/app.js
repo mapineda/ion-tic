@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('tictac', ['ionic', 'ngSanitize', 'btford.socket-io'])
+angular.module('tictac', ['ionic', 'tictac.controllers', 'tictac.services'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -27,26 +27,21 @@ angular.module('tictac', ['ionic', 'ngSanitize', 'btford.socket-io'])
   // Each state's controller can be found in controllers.js.
   $stateProvider
 
-  .state('play', {
-    url: "/play/:username",
-    templateURL: "templates/play.html"
-  })
   .state('splash', {
     url: "/splash",
+    controller: "SplashCtrl",
     templateURL: "templates/splash.html"
   })
+  .state('play', {
+    url: "/play",
+    controller: "PlayCtrl",
+    templateURL: "templates/play.html"
+  });
+
+
 
 
   // If none of the above states are matched, use this as the fallback:
   $urlRouterProvider.otherwise('/splash');
 
-})
-
-
-.constant('SERVER', {
-  // Local server
-  url: 'http://localhost:3000'
-
-  // Public Heroku server
-  // url: 'https://ionic-songhop.herokuapp.com'
 });
