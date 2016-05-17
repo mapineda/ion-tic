@@ -51,5 +51,84 @@ angular.module('tictac.controllers', [])
   var icons = ["<i class='icon ion-ios-circle-outline'></i>", "<i class='icon ion-ios-circle-filled'></i>"];
   var css_classes = ['odd_click', 'even_click'];
 
-  
+  $scope.cellClicked = function(val) {
+    if ($scope.wonGame.status === false) {
+
+      $scope.clickCount += 1;
+
+      if ($scope.clickCount % 2 === 1) {
+        $scope.playerOneArray.push(val);
+      } else {
+        $scope.playerTwoArray.push(val);
+      }
+
+      if($scope.playerOneArray.length >= winCount && $scope.clickCount % 2 === 1) {
+        angular.forEach($scope.gameArray, function (val, key) {
+          var temp = 0;
+          angular.forEach($scope.playerOneArray, function (pVal, pKey) {
+            if (val.indexOf(pvVal) >= 0) {
+              temp += 1;
+            }
+          });
+
+          if (temp === winCount) {
+            $scope.wonGame.player = 'Player 1';
+            $scope.wonGame.status = true;
+            $scope.gameOver = true;
+
+            $ionicPopup.alert({
+              title: 'Game Over',
+              template: $scope.wonGame.player + ' won the game'
+            }).then(function () {
+              $state.go($state.current, {}, {reload: true});
+            })
+          }
+        });
+      }
+      // start here
+      if ($scope.clickCount === (winCount * winCount) && $scope.wonGame.status === false) {
+        $scope.gameOver = true;
+        $ionicPopup.alert({
+          title: 'Draw',
+          template: 'Game draw'
+        }).then(function() {
+          $state.go($state.current, {}, {reload: true});
+        })
+      }
+      if ($scope.playerTwoArray.length >= winCount && $scope.clickCount % 2 === 0) {
+        angular.forEach($scope.gameArray, function (val, key) {
+          var temp = 0;
+
+        angular.forEach($scope.playerTwoArray, function (pVal, pkey) {
+          if (val.indexOf(pVal) >= 0) {
+            temp += 1;
+          }
+        });
+
+        if (temp === winCount) {
+          $scope.wonGame.player = 'Player 2';
+          $scope.wonGame.status = true;
+          $scope.gameOver = true;
+
+          $ionicPopup.alert({
+            title: 'Game Over'
+            template: $scope.wonGame.player + ' won the game'
+          }).then(function() {
+            $state.go($state.current, {}, {reload:true});
+          })
+        }
+    });
+  }
+
+  if ($scope.clickCount % 2 == 0) {
+    $scope.player_num = 'First';
+  } else {
+    $scope.player_num = 'Second';
+  }
+
+  document.getElementById(val).innerHTML = icons[$scope.clickCount % 2];
+  document.getElementById(val).classList.add(css_classes[$scope.clickCount % 2]);
+  }
+};
+
 })];
