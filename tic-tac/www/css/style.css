@@ -3,11 +3,22 @@
   background-position: center;
 }
 
-// play button
-i.your-class.ion-play {
-  font-size: 300px;
+.title_header {
+  font-family: 'Roboto Slab', serif;
+
 }
 
+/* play button stylings */
+i.ion-play {
+  font-size: 200px;
+}
+
+i.ion-share {
+  font-size: 50px;
+}
+
+
+/*game content stylings*/
 .play_game_content {
 
 }
@@ -108,4 +119,28 @@ i.your-class.ion-play {
 }
 .display_none {
   display: none !important;
+}
+
+/* Profile page stylings */
+
+.profile_header {
+  margin-bottom: 5px;
+}
+
+.quick_view {
+  margin-top: 50px;
+}
+.profile_pic {
+  margin-left: 10px;
+}
+.stats {
+  margin-left: 35px;
+}
+
+/*Leaderboard page styling */
+
+/* FOOTER styling */
+.footer_title {
+  font-family: 'Roboto Slab', serif;
+
 }

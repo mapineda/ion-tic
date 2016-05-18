@@ -1,6 +1,74 @@
-<ion-view view-title='Play' class='profile-page'>
+<ion-view class='profile_content'>
   <ion-content scroll='false'>
-    <h1>profile </h1>
+    <div class="profile_header bar bar-header bar-energized">
+      <h1 class="title">Profile</h1>
+    </div>
 
-  </ion-content>
+    <div class='quick_view container'>
+      <div class='row'>
+        <div class='profile_pic col-xs-6'>
+          <img src='http://chalkandwire.com/images/uploads/news/axiom-thumb.jpg'>
+        </div>
+        <div class='stats col-xs-6'>
+          <ul>
+            <li>Name: </li>
+            <li>Bio: </li>
+            <li>Games Won: </li>
+            <li>Friend Ranking: </li>
+            <li>World Rank: </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+      <div class="list">
+
+        <a class="item item-icon-left" href="#">
+          <i class="icon ion-person"></i>
+          Profile Pic
+          <span class='item-note'>EDIT</span>
+        </a>
+
+        <a class="item item-icon-left" href="#">
+          <i class="icon ion-person-stalker"></i>
+          Friends
+          <span class="badge badge-assertive">7</span>
+        </a>
+
+        <a class="item item-icon-left" href="#">
+          <i class="icon ion-email"></i>
+          Message Box
+          <span class="badge badge-assertive">42</span>
+        </a>
+
+      </div>
+      <div class='row'>
+        <button class="button button-balanced button-outline button-block font_bold" ng-click="selectGameType(3)">
+          <i class='icon ion-ios-game-controller-a'></i>
+        </button>
+      </div>
+      <div class='row'>
+        <button class="button button-assertive button-outline button-block font_bold" ng-click="selectGameType(5)">
+          <i class='icon ion-trophy'></i>
+        </button>
+      </div>
+      <div class='row'>
+        <button class="button button-positive button-outline button-block" ng-click="goToGame()">
+          <i class="icon ion-home"></i>
+        </button>
+      </div>
+
+
+      <div class="bar bar-footer bar-stable">
+        <div class="footer_title title">&copy; PhunGames 2016
+          <span class='item-note'>Privacy Policy
+          </span>
+          <span class='item-note'>About | &nbsp;
+          </span>
+          <span class='item-note'>Github | &nbsp;
+          </span>
+        </div>
+      </div>
+
+    </ion-content>
 </ion-view>
