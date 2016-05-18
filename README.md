@@ -83,6 +83,15 @@ Low-res Wireframe:
 * 5/18 - refactor, test, edits, debug
 
 
+##### What was learned
+
+TL:DR; Stick to lean UX and build for the MVP THEN iron out fine details of application.
+
+Example:
+Situation: Got too ambitious with features of project
+Task: Kept starting to code, then scrapping whole code then re-starting a good 4 times
+Action: Finally whittled down to mvp; the game!
+Result: The meat of the application came together over a period of 24hrs after 2weeks of starting and restarting. Of course, *the application always in the iterative process*, however, the mvp is finished.
 
 ## Contact:
 
