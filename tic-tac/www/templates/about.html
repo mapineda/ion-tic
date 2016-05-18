@@ -3,19 +3,62 @@ Create tabs with an icon and label, using tabs-positive styling.
 Each tab's child <ion-nav-view> directive will have own
 navigation history that also transitions its views in and out.
 -->
-<ion-tabs class="tabs-icon-top tabs-color-active-positive">
+<ion-view class='title_about' view-title="About">
+  <ion-nav-bar>
+    <ion-nav-buttons side="left">
+      <button class="button button-positive button-clear no-animation"
+              ng-click="previous()" ng-show="slideIndex > 0">
+        Previous Slide
+      </button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+      <button class="button button-positive button-clear no-animation"
+              ng-click="next()" ng-show="slideIndex != 2">
+        Next
+      </button>
+    </ion-nav-buttons>
+  </ion-nav-bar>
 
+  <ion-slide-box on-slide-changed="slideChanged(index)">
+    <ion-slide>
+      <h3>Thank you for choosing PhunGames!</h3>
+      <div id="logo">
+        <img src="http://blog.finnstore.com/wp-content/uploads/2012/04/Smile-Wallpaper-keep-smiling-8317564-1024-768.jpg">
+      </div>
+      <p>
+        We've worked super hard to make you happy.
+      </p>
+      <p>
+        But if you are angry, go play a game.
+      </p>
+    </ion-slide>
+    <ion-slide>
+      <h3>PhunGames</h3>
 
-  <!-- Play Tab -->
-  <ion-tab title="Play" icon-off="ion-play" icon-on="ion-play" href="#/tab/play">
-    <ion-nav-view name="tab-play"></ion-nav-view>
-  </ion-tab>
+      <div id="list">
+        <h5>Why we're great:</h5>
+        <ol>
+          <li>Multi-screen-as-a-service (MaaS)</li>
+          <li>Fully integrated services platforms</li>
+          <li>Engage, Manage, Monetize</li>
+        </ol>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <h3>Questions?</h3>
+      <button class='button button-positive'>projects@marcopineda.com
+      </button>
+    </ion-slide>
+  </ion-slide-box>
 
-
-  <!-- Leaderboard Tab -->
-  <ion-tab title="Leaderboard" icon-off="ion-trophy" icon-on="ion-trophy" on-select="enteringLeaderboard()" on-deselect="leavingLeaderboard()" href="#/tab/leaderboard" badge="favCount()" badge-style="badge-assertive">
-    <ion-nav-view name="tab-leaderboard"></ion-nav-view>
-  </ion-tab>
-
-
-</ion-tabs>
+  <div class="bar bar-footer bar-stable">
+    <div class="footer_title title">&copy; PhunGames 2016
+      <span class='item-note'>Privacy Policy
+      </span>
+      <span class='item-note' ng-click="goToGame()">Play | &nbsp;
+      </span>
+      <span class='item-note'><a href='https://github.com/mapineda/ion-tic' target='_blank'>Github | &nbsp;</a>
+      </span>
+    </div>
+  </div>
+</ion-view>

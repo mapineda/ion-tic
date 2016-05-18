@@ -75,6 +75,10 @@ Low-res Wireframe:
 * 5/13 - Create blank ionic skeleton, add android platform
 * 5/14 - Create tab templates + controllers & services
 * 5/15 - Finish tab layout
+* 5/16 - scrapped tab layout for better UI with ionic module
+* 5/17 - building the ui functionality of the application
+* 5/18 - refactor, test, edits, debug
+
 
 
 ## Contact:
