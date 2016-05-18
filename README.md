@@ -1,12 +1,21 @@
 # Ion-tic
 Tic-tac-toe goes mobile with ionic/cordova
 
-## Get Started:
-1. clone repo
+## Prerequisites
+
+
+
+## Get Started - client:
+1. clone repo & cd tic-tac
 2. npm install
 3. ionic serve --lab
 
-## Requirements:
+## Get Started - backend:
+1. clone repo & cd tic-tac
+2. npm install
+3. ionic serve --lab
+
+## Project Requirements:
 
 * Implement basic logic: turn-based logic, win calculation, no playing a square that is already occupied, etc.
 * Assume 2 human players (no AI)
@@ -80,8 +89,7 @@ Low-res Wireframe:
 * 5/15 - Finish tab layout
 * 5/16 - scrapped tab layout for better UI with ionic module
 * 5/17 - building the ui functionality of the application
-* 5/18 - refactor, test, edits, debug
-
+* 5/18 - refactor, test, edits, debug - build backend api
 
 ##### What was learned
 
