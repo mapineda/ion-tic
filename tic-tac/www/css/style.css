@@ -1,3 +1,7 @@
+a {
+    text-decoration: none !important;
+}
+
 /* Splash page stylings */
 .splash_content {
   background-position: center;
