@@ -30,11 +30,11 @@
 
     <div class="padding" ng-show="!gameOver">
       <div class="padding text-center even_click font_bold"
-           ng-class="{'even_click':(player_no === 'First'),'odd_click':(player_no === 'Second')}">
-        <span ng-bind="player_no"></span>
+           ng-class="{'even_click':(player_num === 'First'),'odd_click':(player_num === 'Second')}">
+        <span ng-bind="player_num"></span>
         <span>player turn - </span>
-        <span ng-if="(player_no === 'First')"><i class="ion-android-close font_16px"></i></span>
-        <span ng-if="(player_no === 'Second')"><i class="ion-android-radio-button-off font_16px"></i></span>
+        <span ng-if="(player_num === 'First')"><i class="ion-android-close font_16px"></i></span>
+        <span ng-if="(player_num === 'Second')"><i class="ion-android-radio-button-off font_16px"></i></span>
       </div>
     </div>
 

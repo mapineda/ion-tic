@@ -31,19 +31,19 @@ angular.module('tictac', [
         controller: 'HomeCtrl',
         templateUrl: 'templates/splash.html'
       })
-      .state('play-game-3by3', {
+      .state('play', {
         url: '/play',
         cache: false,
         controller: 'HomeCtrl',
         templateUrl: 'templates/play.html'
       })
-      .state('play-game-4by4', {
+      .state('profile', {
         url: '/profile',
         cache: false,
         controller: 'HomeCtrl',
         templateUrl: 'templates/profile.html'
       })
-      .state('play-game-5by5', {
+      .state('leaderboard', {
         url: '/leaderboard',
         cache: false,
         controller: 'HomeCtrl',

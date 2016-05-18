@@ -5,14 +5,14 @@ angular.module('tictac.controllers', [])
 
       $scope.started = false;
       $scope.gameOver = false;
-
+      //create var for page slider
       var splash_page_slider = $ionicSlideBoxDelegate.$getByHandle('splash_page_slider');
-
+      //start game function
       $scope.startGame = function () {
         $scope.started = true;
         $ionicSlideBoxDelegate.slide(1);
       };
-
+      //is the game running? t/f
       $scope.running = true;
       var winCount = 0;
 
@@ -22,22 +22,18 @@ angular.module('tictac.controllers', [])
       $scope.playGame = function () {
         splash_page_slider.slide(1);
       };
-      $scope.selectGameType = function (type) {
+      $scope.selectOption = function (type) {
         if (type === 3) {
-          $state.go('play-game-3by3');
+          $state.go('play');
           GameService.setWinCount(3);
           GameService.setGameArray(GameService.getGameArray3by3);
-          $log.log('3X3 selected');
+          $log.log('play selected');
         } else if (type === 4) {
-          $state.go('play-game-4by4');
-          GameService.setWinCount(4);
-          GameService.setGameArray(GameService.getGameArray4by4);
-          $log.log('4X4 selected');
+          $state.go('profile');
+          $log.log('profile selected');
         } else if (type === 5) {
-          $state.go('play-game-5by5');
-          GameService.setWinCount(5);
-          GameService.setGameArray(GameService.getGameArray5by5);
-          $log.log('5X5 selected');
+          $state.go('leaderboard');
+          $log.log('leaderboard selected');
         }
       };
 
@@ -54,7 +50,7 @@ angular.module('tictac.controllers', [])
         $scope.running = !$scope.running;
       };
 
-      $scope.player_no = 'First';
+      $scope.player_num = 'First';
       $scope.clickCount = 0;
       $scope.clickedArray = [];
       $scope.playerOneArray = [];
@@ -87,7 +83,7 @@ angular.module('tictac.controllers', [])
                 $scope.wonGame.player = 'Player 1';
                 $scope.wonGame.status = true;
                 $scope.gameOver = true;
-
+                // ionic popup alert when game is over + who won the game then restart the game
                 $ionicPopup.alert({
                   title: 'Game Over',
                   template: $scope.wonGame.player + ' won the game'
@@ -100,6 +96,7 @@ angular.module('tictac.controllers', [])
 
           if ($scope.clickCount === (winCount * winCount) && $scope.wonGame.status === false) {
             $scope.gameOver = true;
+            //once game is over initiate ionic popup alert + who won the game then restart the game
             $ionicPopup.alert({
               title: 'Game Tie',
               template: 'Game tie up'
@@ -122,7 +119,7 @@ angular.module('tictac.controllers', [])
                 $scope.wonGame.player = 'Player 2';
                 $scope.wonGame.status = true;
                 $scope.gameOver = true;
-
+                // ionic game over pop up + who won + restart game
                 $ionicPopup.alert({
                   title: 'Game Over',
                   template: $scope.wonGame.player + ' won the game'
@@ -134,9 +131,9 @@ angular.module('tictac.controllers', [])
           }
 
           if ($scope.clickCount % 2 == 0) {
-            $scope.player_no = 'First';
+            $scope.player_num = 'First';
           } else {
-            $scope.player_no = 'Second';
+            $scope.player_num = 'Second';
           }
 
           document.getElementById(val).innerHTML = icons[$scope.clickCount % 2];
