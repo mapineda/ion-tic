@@ -143,6 +143,13 @@ i.ion-share {
 
 /*Leaderboard page styling */
 
+
+/* FOOTER styling */
+.footer_title {
+  font-family: 'Roboto Slab', serif;
+
+}
+
 /*ABOUT PAGE */
 .title_about {
   font-family: 'Roboto Slab', serif;
@@ -184,9 +191,7 @@ i.ion-share {
   display:none;
 }
 
-
-/* FOOTER styling */
-.footer_title {
-  font-family: 'Roboto Slab', serif;
-
+/* PRIVACY POLICY PAGE */
+.policy {
+  margin-top: 0;
 }
