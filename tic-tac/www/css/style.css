@@ -156,10 +156,10 @@ i.ion-share {
 
 }
 
-.slider {
+.about-slider {
   height: 100%;
 }
-.slider-slide {
+.about-slider-slide {
   padding-top: 80px;
   color: #000;
   background-color: #fff;
@@ -169,6 +169,9 @@ i.ion-share {
   font-weight: 300;
 }
 
+.slider-pager {
+  display: none;
+}
 #logo {
   margin: 30px 0px;
 }

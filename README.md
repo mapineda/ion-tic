@@ -2,6 +2,9 @@
 Tic-tac-toe goes mobile with ionic/cordova
 
 ## Get Started:
+1. clone repo
+2. npm install
+3. ionic serve --lab
 
 ## Requirements:
 

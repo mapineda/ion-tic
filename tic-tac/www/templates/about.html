@@ -7,23 +7,23 @@ navigation history that also transitions its views in and out.
   <ion-nav-bar>
     <ion-nav-buttons side="left">
       <button class="button button-positive button-clear no-animation"
-              ng-click="previous()" ng-show="slideIndex > 0">
+              ng-click="previous()">
         Previous Slide
       </button>
     </ion-nav-buttons>
     <ion-nav-buttons side="right">
       <button class="button button-positive button-clear no-animation"
-              ng-click="next()" ng-show="slideIndex != 2">
+              ng-click="next()">
         Next
       </button>
     </ion-nav-buttons>
   </ion-nav-bar>
 
-  <ion-slide-box on-slide-changed="slideChanged(index)">
-    <ion-slide>
+  <ion-slide-box class='about-slider-slide 'on-slide-changed="slideChanged(index)">
+    <ion-slide class='about-slider'>
       <h3>Thank you for choosing PhunGames!</h3>
       <div id="logo">
-        <img src="http://blog.finnstore.com/wp-content/uploads/2012/04/Smile-Wallpaper-keep-smiling-8317564-1024-768.jpg">
+        <img src="http://pix.iemoji.com/images/emoji/apple/ios-9/256/winking-face.png">
       </div>
       <p>
         We've worked super hard to make you happy.
@@ -32,7 +32,7 @@ navigation history that also transitions its views in and out.
         But if you are angry, go play a game.
       </p>
     </ion-slide>
-    <ion-slide>
+    <ion-slide class='about-slider about-slider-slide'>
       <h3>PhunGames</h3>
 
       <div id="list">
@@ -44,7 +44,7 @@ navigation history that also transitions its views in and out.
         </ol>
       </div>
     </ion-slide>
-    <ion-slide>
+    <ion-slide class='about-slider about-slider-slide'>
       <h3>Questions?</h3>
       <button class='button button-positive'>projects@marcopineda.com
       </button>
