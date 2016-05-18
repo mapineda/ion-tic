@@ -50,6 +50,29 @@ angular.module('tictac.controllers', [])
         $scope.running = !$scope.running;
       };
 
+      $scope.goToAbout = function () {
+        $state.go('about', {}, {reload: true});
+        $scope.started = false;
+      };
+
+      $scope.goToPrivacy = function () {
+        $state.go('privacy', {}, {reload: true});
+        $scope.started = false;
+        $log.log('privacy policy selected');
+      };
+
+      $scope.next = function() {
+        $ionicSlideBoxDelegate.next();
+      };
+      $scope.previous = function() {
+        $ionicSlideBoxDelegate.previous();
+      };
+
+      // Called each time the slide changes
+      $scope.slideChanged = function(index) {
+        $scope.slideIndex = index;
+      };
+
       $scope.player_num = 'First';
       $scope.clickCount = 0;
       $scope.clickedArray = [];

@@ -3,11 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('tictac', [
-  'ionic',
-  'tictac.controllers',
-  'tictac.services'
-])
+angular.module('tictac', [ 'ionic', 'tictac.controllers','tictac.services' ])
 
   .run(function ($ionicPlatform) {
     $ionicPlatform.ready(function () {
@@ -22,7 +18,8 @@ angular.module('tictac', [
     });
   })
 
-  .config(function ($stateProvider, $urlRouterProvider) {
+  .config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
+    $ionicConfigProvider.backButton.previousTitleText(false).text('').icon('ion-chevron-left');
 
     $stateProvider
       .state('home', {
@@ -48,6 +45,12 @@ angular.module('tictac', [
         cache: false,
         controller: 'HomeCtrl',
         templateUrl: 'templates/leaderboard.html'
+      })
+      .state('about', {
+        url: '/about',
+        cache: false,
+        controller: 'HomeCtrl',
+        templateUrl: '/templates/about.html'
       });
 
     $urlRouterProvider.otherwise('/home')
