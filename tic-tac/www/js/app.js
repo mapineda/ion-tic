@@ -51,6 +51,12 @@ angular.module('tictac', [ 'ionic', 'tictac.controllers','tictac.services' ])
         cache: false,
         controller: 'HomeCtrl',
         templateUrl: '/templates/about.html'
+      })
+      .state('privacy', {
+        url: '/privacy',
+        cache: false,
+        controller: 'HomeCtrl',
+        templateUrl: '/templates/privacy.html'
       });
 
     $urlRouterProvider.otherwise('/home')

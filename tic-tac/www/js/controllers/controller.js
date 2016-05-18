@@ -36,11 +36,11 @@ angular.module('tictac.controllers', [])
           $log.log('leaderboard selected');
         }
       };
-
+      //restart game
       $scope.reStartGame = function () {
         $state.go($state.current, {}, {reload: true});
       };
-
+      // go to home state
       $scope.goToGame = function () {
         $state.go('home', {}, {reload: true});
         $scope.started = false;
@@ -49,21 +49,22 @@ angular.module('tictac.controllers', [])
       $scope.pauseResumeGame = function () {
         $scope.running = !$scope.running;
       };
-
+      // go to about state
       $scope.goToAbout = function () {
         $state.go('about', {}, {reload: true});
         $scope.started = false;
       };
-
+      // go to privacy state
       $scope.goToPrivacy = function () {
         $state.go('privacy', {}, {reload: true});
         $scope.started = false;
         $log.log('privacy policy selected');
       };
-
+      // go to next slide in about state
       $scope.next = function() {
         $ionicSlideBoxDelegate.next();
       };
+      // direct to previous slide in about state
       $scope.previous = function() {
         $ionicSlideBoxDelegate.previous();
       };
@@ -80,9 +81,10 @@ angular.module('tictac.controllers', [])
       $scope.playerTwoArray = [];
       $scope.wonGame = {player: '', status: false};
 
+      // declare variables for player icons
       var icons = ["<i class='icon ion-android-radio-button-off'></i>", "<i class='icon ion-android-close'></i>"];
       var css_classes = ['odd_click', 'even_click'];
-
+      // write game logic
       $scope.cellClicked = function (val) {
         if ($scope.wonGame.status === false) {
 
