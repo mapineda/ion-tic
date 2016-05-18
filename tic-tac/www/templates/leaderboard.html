@@ -1,11 +1,94 @@
-<ion-view view-title="{{ username }}'s Leaderboard" class='leaderboard-page'>
-  <ion-nav-buttons side='right'>
-    <button class='button' ng-click='logout()'>
-      Logo out
-    </button>
+<ion-view class='leaderboard_content'>
+  <ion-content scroll='true'>
+    <div class="bar bar-header bar-assertive">
+      <h1 class="title">Leaderboard</h1>
+    </div>
+    <div class="item item-divider">
+    Friend Rankings
+    </div>
+      <div class="friend_ranking_list list">
 
-  </ion-nav-buttons>
-  <ion-content>
+        <a class="item item-avatar" href="#">
+          <img src="http://chalkandwire.com/images/uploads/news/axiom-thumb.jpg">
+          <h2>You!</h2>
+          <p>Full steam ahead!</p>
+          <h3>Rank: 1/7</h3>
+        </a>
 
+        <a class="item item-avatar" href="#">
+          <img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/14/1432890adc72eb398b6c5bd73cb2c9d6e2f8cef5_medium.jpg">
+          <h2>JonSnow</h2>
+          <p>Winter is coming.</p>
+          <h3>Rank: 2/7</h3>
+        </a>
+
+        <a class="item item-avatar" href="#">
+          <img src="https://thumbnail.myheritageimages.com/421/831/289421831/000/000019_76415454ra1l3b3r7d5a55_P_64x64C.jpg">
+          <h2>DaeTarg</h2>
+          <p>THE NEXT TIME YOU RAISE A HAND TO ME WILL BE THE LAST TIME YOU HAVE HANDS!</p>
+          <h3>Rank: 3/7</h3>
+        </a>
+
+        <a class="item item-avatar" href="#">
+          <img src="https://pbs.twimg.com/profile_images/771025950/TwitterPIC_normal.jpg">
+          <h2>Gracie</h2>
+          <p>Back off, man. I'm a scientist.</p>
+          <h3>Rank: 4/7</h3>
+        </a>
+
+        <a class="item item-avatar" href="#">
+          <img src="http://pthumb.lisimg.com/image/6141448/50.jpg">
+          <h2>Khal</h2>
+          <p>I keep it 100%</p>
+          <h3>Rank: 5/7</h3>
+        </a>
+
+        <a class="item item-avatar" href="#">
+          <img src="https://yt3.ggpht.com/-aW9DzrF3pqk/AAAAAAAAAAI/AAAAAAAAAAA/BIEMz4IehZg/s48-c-k-no-rj-c0xffffff/photo.jpg">
+          <h2>Eddard</h2>
+          <p>THE MAN WHO PASSES THE SENTENCE SHOULD SWING THE SWORD.</p>
+          <h3>Rank: 6/7</h3>
+        </a>
+
+        <a class="item item-avatar" href="#">
+          <img src="http://d1nr5wevwcuzuv.cloudfront.net/product_photos/32452821/Tyrion_20_20Lannister_64sq.jpg">
+          <h2>Tyrion</h2>
+          <p>The mad king did as he liked.</p>
+          <h3>Rank: 7/7</h3>
+        </a>
+
+      </div>
+
+    <div class="item item-divider">
+    World Rankings
+    </div>
+
+    <div class='container'>
+      <div class='row'>
+
+
+
+
+      </div>
+
+      <div class='row'>
+        <button class="button button-balanced button-outline button-block font_bold" ng-click="selectGameType(3)">
+          <i class='icon ion-ios-game-controller-a'></i>
+        </button>
+      </div>
+
+      <div class='row'>
+        <button class="button button-energized button-outline button-block font_bold" ng-click="selectGameType(4)">
+          <i class='icon ion-person'></i>
+        </button>
+      </div>
+
+      <div class='row'>
+        <button class="button button-positive button-outline button-block" ng-click="goToGame()">
+          <i class="icon ion-home"></i>
+        </button>
+      </div>
+
+    </div>
   </ion-content>
 </ion-view>
