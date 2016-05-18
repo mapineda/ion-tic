@@ -14,14 +14,24 @@ mongoose.connect(process.env.DB_CONN_TIC_TAC);
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.json());
 
+// models go here
+// user model
+var User = require('./models/user');
 
 // set port to 8080
 var port = process.env.PORT || 8080;
 // ROUTES FOR API
 // ============================================
-
 // get instance of express Router
 var router = express.Router();
+
+//middleware to use for all requests:
+router.use(function(req, res, next) {
+  //log
+  console.log('Something from Nothing');
+  // go to next route
+  next();
+});
 
 // test route to make sure everything is working (GET http://localhost:8080/api)
 router.get('/', function(req, res) {
