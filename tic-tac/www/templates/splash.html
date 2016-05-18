@@ -1,24 +1,34 @@
-<ion-view ng-controller='SplashController as splashctrl'view-title="tictac" hide-nav-bar="true" class="splash-page">
-  <ion-content scroll="false">
+<ion-view>
+  <ion-content class="splash_content">
 
-    <div class="padding logo">
-      <h1>PhunGames</h1>
+    <div class="padding-vertical">
+      <img src="img/splash.png" alt="" class="full-image" style="height: 300px;"/>
     </div>
 
-
-    <div class="login-form">
-      <div class="card">
-        <div class="list">
-          <label class="item item-input">
-            <input type="text"  placeholder="Enter an Alias" ng-model='splashctrl.username'>
-          </label>
+    <ion-slide-box delegate-handle="splash_page_slider" show-pager="false">
+      <ion-slide>
+        <div class="padding-horizontal">
+          <button class="button button-positive button-block" ng-click="playGame()"><i class='ion ion-play'></i></button>
         </div>
-      </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="padding-horizontal">
+          <button class="button button-balanced button-outline button-block font_bold" ng-click="selectGameType(3)">
+            <i class='icon ion-ios-game-controller-a'></i>
+          </button>
+          <button class="button button-energized button-outline button-block font_bold" ng-click="selectGameType(4)">
+            <i class='icon ion-person'></i>
+          </button>
+          <button class="button button-assertive button-outline button-block font_bold" ng-click="selectGameType(5)">
+            <i class='icon ion-trophy'></i>
+          </button>
+          <button class="button button-positive button-outline button-block" ng-click="goToGame()">
+            <i class="icon ion-home"></i>
+          </button>
+        </div>
+      </ion-slide>
+    </ion-slide-box>
 
-      <div class="padding-left padding-right">
-        <button class="button button-block action-button" ng-click="splashctrl.join()">Join</button>
-      </div>
-    </div>
 
   </ion-content>
 </ion-view>
