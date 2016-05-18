@@ -5,7 +5,9 @@
 var express = require('express'); //call express
 var app = express(); //define app using express
 var bodyParser = require('body-parser');
-
+var mongoose = require('mongoose');
+// connect to remote mongolabs db
+mongoose.connect(process.env.DB_CONN_TIC_TAC);
 
 // configure app to use bodyParser()
 // will let us get data from a POST
