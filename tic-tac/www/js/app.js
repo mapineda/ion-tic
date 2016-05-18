@@ -3,45 +3,78 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('tictac', ['ionic', 'tictac.controllers', 'tictac.services'])
+angular.module('tictac', [
+  'ionic',
+  'tictac.controllers',
+  'tictac.services'
+])
 
-.run(function($ionicPlatform) {
-  $ionicPlatform.ready(function() {
-    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-    // for form inputs)
-    if(window.cordova && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-    }
-    if(window.StatusBar) {
-      StatusBar.styleDefault();
-    }
-  });
-})
+  .run(function ($ionicPlatform) {
+    $ionicPlatform.ready(function () {
+      // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+      // for form inputs)
+      if (window.cordova && window.cordova.plugins.Keyboard) {
+        cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+      }
+      if (window.StatusBar) {
+        StatusBar.styleDefault();
+      }
+      function detectDevice() {
+        if (navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/Windows Phone/i)) {
+          return true;
+        } else {
+          return false;
+        }
+      }
 
+      var device = detectDevice();
 
-.config(function($stateProvider, $urlRouterProvider) {
+      if (device) {
+        //console.log(device.cordova);
+        //alert(device.cordova);
+        //alert(navigator);
 
-  // Ionic uses AngularUI Router, which uses the concept of states.
-  // Learn more here: https://github.com/angular-ui/ui-router.
-  // Set up the various states in which the app can be.
-  // Each state's controller can be found in controllers.js.
-  $stateProvider
+        navigator.globalization.getPreferredLanguage(
+          function (language) {
+            console.log('language: ' + language.value + '\n');
+          },
+          function () {
+            console.log('Error getting language\n');
+          }
+        );
+      }
 
-  .state('splash', {
-    url: "/splash",
-    controller: "SplashCtrl",
-    templateURL: "templates/splash.html"
+    });
   })
-  .state('play', {
-    url: "/play",
-    controller: "PlayCtrl",
-    templateURL: "templates/play.html"
+
+  .config(function ($stateProvider, $urlRouterProvider) {
+
+    $stateProvider
+      .state('home', {
+        url: '/home',
+        cache: false,
+        controller: 'HomeCtrl',
+        templateUrl: 'templates/splash.html'
+      })
+      .state('play-game-3by3', {
+        url: '/play',
+        cache: false,
+        controller: 'HomeCtrl',
+        templateUrl: 'templates/play.html'
+      })
+      .state('play-game-4by4', {
+        url: '/play-game-4by4',
+        cache: false,
+        controller: 'HomeCtrl',
+        templateUrl: 'templates/play-game-4by4.html'
+      })
+      .state('play-game-5by5', {
+        url: '/play-game-5by5',
+        cache: false,
+        controller: 'HomeCtrl',
+        templateUrl: 'templates/play-game-5by5.html'
+      });
+
+    $urlRouterProvider.otherwise('/home')
+
   });
-
-
-
-
-  // If none of the above states are matched, use this as the fallback:
-  $urlRouterProvider.otherwise('/splash');
-
-});

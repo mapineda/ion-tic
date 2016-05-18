@@ -1,36 +1,30 @@
-angular.module('tictac.services', ['ionic.utils'])
+angular.module('tictac.services', [])
 
-.factory('User', function($http, $q, $localstorage, SERVER) {
+.service('GameService', ['$log', function($log) {
+  this.getGameArray3by3 = [
+    ['11', '12', '13'],
+    ['21', '22', '23'],
+    ['31', '32', '33'],
+    ['11', '21', '31'],
+    ['12', '22', '32'],
+    ['13', '23', '33'],
+    ['11', '22', '33'],
+    ['13', '22', '31'],
+  ];
 
-  var o = {
-    username: false,
-    session_id: false //TODO: session token should expire after x days
-  }
+  this.winCount = 0;
+  this.setWinCount = function(winCount) {
+    this.winCount = winCount;
+  };
+  this.getWinCount = function() {
+    return this.winCount;
+  };
 
-  // attempt login or signup
-  o.auth = function(username, signingUp) {
-
-    var authRoute;
-
-    if (signingUp) {
-      authRoute = 'signup';
-    } else {
-      authRoute = 'login '
-    }
-
-    return $http.post(SERVER.url + '/' + authRoute, {username: username})
-      .success(function(data) {
-        o.setSession(data.username, data.session_id)
-    })
-  }
-
-  //set session data
-  o.setSession = function(username, session_id) {
-    if (username) o.username = username;
-    if (session_id) o.session_id = session_id;
-
-    //set data to localstorage object
-    $localstorage.setObject('user', {username: username, session_id: session_id });
-  }
-  
-});
+  this.gameArray = [];
+  this.setGameArray = function(gameArray) {
+    this.gameArray = gameArray;
+  };
+  this.getGameArray = function() {
+    return this.gameArray;
+  };
+}]);
