@@ -24,7 +24,7 @@ angular.module('tictac', [ 'ionic', 'tictac.controllers','tictac.services', 'ngC
     $stateProvider
       .state ('login', {
         url: '/login',
-        controller: 'HomeCtrl',
+        controller: 'LoginCtrl',
         templateUrl: 'templates/login.html'
       })
       .state('home', {
