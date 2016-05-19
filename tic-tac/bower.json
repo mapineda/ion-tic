@@ -6,6 +6,7 @@
   },
   "dependencies": {
     "ngCordova": "^0.1.26-alpha",
-    "angular-local-storage": "^0.2.7"
+    "angular-local-storage": "^0.2.7",
+    "jsSHA": "^2.1.0"
   }
 }
