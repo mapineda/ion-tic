@@ -5,44 +5,35 @@
 var express = require('express'); //call express
 var app = express(); //define app using express
 var bodyParser = require('body-parser');
+var morgan = require('morgan');
 var mongoose = require('mongoose');
+var passport = require('passport');
+var config = require('./config/db');
+//get the mongoose model user
+var User = require('./models/user');
+// set port to 8080
+var port = process.env.PORT || 8080;
+
+var jwt = require('jwt-simple');
+
 // connect to remote mongolabs db
 mongoose.connect(process.env.DB_CONN_TIC_TAC);
 
-// configure app to use bodyParser()
-// will let us get data from a POST
-app.use(bodyParser.urlencoded({ extended: true}));
+//get request parameters
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-// models go here
-// user model
-var User = require('./models/user');
+//log to console
+app.use(morgan('dev'));
 
-// set port to 8080
-var port = process.env.PORT || 8080;
-// ROUTES FOR API
-// ============================================
-// get instance of express Router
-var router = express.Router();
+//Use the passport package the application
+app.use(passport.initialize());
 
-//middleware to use for all requests:
-router.use(function(req, res, next) {
-  //log
-  console.log('Something from Nothing');
-  // go to next route
-  next();
+//demo route (GET http://localhost:8080)
+app.get('/', function(req, res) {
+  res.send('Hello! The API is a http://localhost:' + port + '/api');
 });
 
-// test route to make sure everything is working (GET http://localhost:8080/api)
-router.get('/', function(req, res) {
-  res.json({message: 'welcome to the phungame api!' });
-});
-
-// more api routes happen here
-
-// REGISTER ROUTES
-// all routes prefixed with /api
-app.use('/api', router);
 
 //START SERVER
 // ======================
