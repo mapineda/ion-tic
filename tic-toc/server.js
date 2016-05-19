@@ -16,9 +16,6 @@ var port = process.env.PORT || 8080;
 
 var jwt = require('jwt-simple');
 
-// connect to remote mongolabs db
-mongoose.connect(process.env.DB_CONN_TIC_TAC);
-
 //get request parameters
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -34,6 +31,10 @@ app.get('/', function(req, res) {
   res.send('Hello! The API is a http://localhost:' + port + '/api');
 });
 
+// connect to remote mongolabs db
+mongoose.connect(process.env.DB_CONN_TIC_TAC);
+
+//pass passport for configuration
 
 //START SERVER
 // ======================
