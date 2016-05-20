@@ -90,16 +90,18 @@ Low-res Wireframe:
 * 5/16 - scrapped tab layout for better UI with ionic module
 * 5/17 - building the ui functionality of the application
 * 5/18 - refactor, test, edits, debug - build backend api
+* 5/19 - working with twitter login authentication
+* 5/20 - debugging twitter login authentication that resulted from Cordova updates
 
 ##### What was learned
 
 TL:DR; Stick to lean UX and build for the MVP THEN iron out fine details of application.
 
 Example:
-Situation: Got too ambitious with features of project
-Task: Kept starting to code, then scrapping whole code then re-starting a good 4 times
-Action: Finally whittled down to mvp; the game!
-Result: The meat of the application came together over a period of 24hrs after 2weeks of starting and restarting. Of course, *the application always in the iterative process*, however, the mvp is finished.
+**Situation**: Got too ambitious with features of project
+**Task**: Kept starting to code, then scrapping whole code then re-starting a good 4 times
+**Action**: Finally whittled down to mvp; the game!
+**Result**: The meat of the application came together over a period of 24hrs after 2weeks of starting and restarting. Of course, *the application always in the iterative process*, however, the mvp is finished.
 
 ### Future Iterations:
 * user profile customization
