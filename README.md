@@ -101,6 +101,14 @@ Task: Kept starting to code, then scrapping whole code then re-starting a good 4
 Action: Finally whittled down to mvp; the game!
 Result: The meat of the application came together over a period of 24hrs after 2weeks of starting and restarting. Of course, *the application always in the iterative process*, however, the mvp is finished.
 
+### Future Iterations:
+* user profile customization
+* save game stats in server
+* socket.io integration
+* Realtime push updates of leaderboard + friend ranking
+* add friends via Twitter
+
+
 ## Contact:
 
 * Email: projects@marcopineda.com
