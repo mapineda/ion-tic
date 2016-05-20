@@ -72,9 +72,9 @@
 		};
 	}
 
-	_UserService.$inject = ['$q', 'Config', '$http', 'localStorageService', '$state', '$cordovaPush', '$ionicPlatform'];
+	_UserService.$inject = ['$q', 'Config', '$http', 'localStorageService', '$state', '$cordovaPush', '$ionicPlatform', 'ngCordovaOauth'];
 
-	angular.module('app.services')
+	angular.module('tictac.services')
 		.factory('UserService', _UserService)
 		.service('Config', _ConfigService);
 })();

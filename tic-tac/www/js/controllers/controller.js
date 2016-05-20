@@ -1,13 +1,13 @@
 angular.module('tictac.controllers', [])
 
-.controller('LoginCtrl', function ($scope, $state, $cordovaOauth, UserService, Config, $ionicPlatform, $ionicLoading, $cordovaPush) {
+.controller('LoginCtrl', function ($scope, $state, $ngCordovaOauth, UserService, Config, $ionicPlatform, $ionicLoading, $cordovaPush) {
 
   if (UserService.current()) {
     $state.go('home');
   }
   $scope.twitter = function () {
     $ionicPlatform.ready(function () {
-      $cordovaOauth.twitter(Config.twitterKey, Config.twitterSecret)
+      $ngCordovaOauth.twitter(Config.twitterKey, Config.twitterSecret)
         .then(function (result) {
           $ionicLoading.show({
             template: 'Loading...'

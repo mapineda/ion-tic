@@ -2,6 +2,26 @@ a {
     text-decoration: none !important;
 }
 
+/* LOGIN PAGE stylings */
+.login_content {
+    /*background: url("img/friend-hands-coffee.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;*/
+
+}
+
+.app_name_row {
+  margin-top:150px;
+  margin-left: 35px;
+  margin-bottom: 20px;
+}
+
+.app_name {
+  font-family: 'Economica', sans-serif;
+  font-size: 50px;
+}
+
 /* Splash page stylings */
 .splash_content {
   background-position: center;
